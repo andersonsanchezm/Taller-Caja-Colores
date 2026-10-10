@@ -1,0 +1,26 @@
+.DS_Store
+# Contexto local de Codex
+AGENTS.md
+
+# Archivos locales de editores
+.idea/
+.vscode/
+
+# Secretos y configuracion local
+.env
+*.env.local
+
+# Python
+*.egg-info/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+
+# Frontend futuro
+node_modules/
+dist/
+build/
+
