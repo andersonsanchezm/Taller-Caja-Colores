@@ -52,7 +52,7 @@ python3.12 --version
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install -e ".[dev]"
+python -m pip install -r requirements.txt
 ```
 
 Un entorno virtual aisla las dependencias de este proyecto para no mezclarlas con otros programas instalados en el equipo.
@@ -68,7 +68,7 @@ py -3.12 --version
 py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-python -m pip install -e ".[dev]"
+python -m pip install -r requirements.txt
 ```
 
 Si PowerShell bloquea temporalmente la activacion del entorno virtual, se puede habilitar solo para la terminal actual:
@@ -122,13 +122,25 @@ El servidor se detiene con `Ctrl+C` en la terminal donde se esta ejecutando Uvic
 
 El backend permite por defecto solicitudes provenientes de los puertos locales `3000` y `5173`, utilizados comunmente por herramientas de desarrollo frontend.
 
-Si el frontend utiliza otro origen, se puede crear un archivo `.env` a partir de `.env.example`:
+### Crear el archivo `.env` en macOS o Linux
+
+Desde la carpeta `backend`:
 
 ```bash
 cp .env.example .env
 ```
 
-Luego se ajusta la variable:
+### Crear el archivo `.env` en Windows PowerShell
+
+Desde la carpeta `backend`:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+El archivo `.env.example` es una plantilla que si se comparte mediante Git. Cada integrante crea su propio `.env`, que permanece local y esta excluido por `.gitignore`.
+
+Si el frontend utiliza otro puerto u origen, se modifica la variable dentro de `.env`:
 
 ```text
 FASTEXPRESS_CORS_ORIGINS=http://localhost:5173
@@ -141,3 +153,15 @@ uvicorn app.main:app --reload --env-file .env
 ```
 
 Los distintos origenes se separan mediante comas. Un origen incluye el protocolo, el dominio y el puerto; por ejemplo, `http://localhost:5173`.
+
+No se deben escribir contrasenas, tokens ni otros secretos en `.env.example`. Si en el futuro se agregan secretos al `.env`, solo se documentara el nombre de cada variable en la plantilla, dejando su valor vacio.
+
+## Alternativa de instalacion editable
+
+El archivo `pyproject.toml` tambien permite instalar el proyecto y sus dependencias de desarrollo en modo editable:
+
+```bash
+python -m pip install -e ".[dev]"
+```
+
+El modo editable resulta util durante el desarrollo porque los cambios del codigo se reflejan sin reinstalar el paquete. Para ejecutar la tarea, `requirements.txt` es la opcion mas directa.
