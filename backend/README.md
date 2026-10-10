@@ -4,7 +4,17 @@ API REST escrita en Python con FastAPI para calcular cotizaciones de envios.
 
 ## Estado actual
 
-La estructura inicial esta creada y la aplicacion contiene unicamente un endpoint de salud. El algoritmo de cotizacion todavia no esta implementado.
+El backend ya permite calcular cotizaciones mediante una API REST. Incluye:
+
+- Reglas de tarifa base y cargo por peso.
+- Descuentos para clientes `NUEVO`, `FRECUENTE` y `VIP`.
+- Recargos para envios `ESTANDAR` y `EXPRESS`.
+- Validacion de solicitudes y respuestas de error uniformes.
+- Documentacion interactiva mediante Swagger.
+- Configuracion CORS para conectar un frontend local.
+- Endpoint de salud para comprobar la disponibilidad del servidor.
+
+La primera version no utiliza base de datos porque el enunciado no exige almacenar las cotizaciones.
 
 ## Estructura
 
@@ -21,6 +31,17 @@ backend/
 |-- pyproject.toml    Dependencias y configuracion del proyecto
 `-- README.md         Instrucciones y descripcion del backend
 ```
+
+## Descargar el proyecto
+
+En macOS, Linux o Windows, copia la URL HTTPS desde el boton `Code` del repositorio de GitHub y ejecuta:
+
+```bash
+git clone https://github.com/andersonsanchezm/Taller-Caja-Colores.git
+cd Taller-Caja-Colores/backend
+```
+
+Si el repositorio ya se encuentra descargado, solo es necesario entrar en la carpeta `backend` antes de continuar.
 
 ## Preparar el entorno local en macOS o Linux
 
