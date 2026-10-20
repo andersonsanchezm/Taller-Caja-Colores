@@ -24,3 +24,6 @@ node_modules/
 dist/
 build/
 
+# Reportes generados por Playwright
+frontend/playwright-report/
+frontend/test-results/
