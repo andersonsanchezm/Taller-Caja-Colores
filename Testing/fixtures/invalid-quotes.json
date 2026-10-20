@@ -1,0 +1,7 @@
+[
+  { "weight_kg": 0.00, "customer_type": "VIP", "shipping_type": "EXPRESS" },
+  { "weight_kg": 20.01, "customer_type": "VIP", "shipping_type": "EXPRESS" },
+  { "weight_kg": 1.234, "customer_type": "VIP", "shipping_type": "EXPRESS" },
+  { "weight_kg": 1, "customer_type": "INVALID", "shipping_type": "EXPRESS" },
+  { "weight_kg": 1, "customer_type": "VIP", "shipping_type": "INVALID" }
+]

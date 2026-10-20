@@ -4,6 +4,21 @@ Estos documentos indican cómo demostrar el cumplimiento de las especificaciones
 
 Resultados: `Passed`, `Failed`, `Blocked`, `Not Run`.
 
+## Documentación por tipo de prueba
+
+- [Inventario completo de pruebas](inventario-pruebas.md)
+
+- [Unit tests](unit-tests.md)
+- [Integration tests](integration-tests.md)
+- [UI tests de componentes](ui-tests.md)
+- [Snapshot tests](snapshot-tests.md)
+- [Stress tests](stress-tests.md)
+- [UI E2E en navegador real](e2e-tests.md)
+- [Accesibilidad](accessibility-tests.md)
+- [Rendimiento](performance-tests.md)
+- [Recuperación](recovery-tests.md)
+- [Compatibilidad](compatibility-tests.md)
+
 Tipos: caja negra, caja blanca, unit test, integración, E2E y manual.
 
 ## Casos

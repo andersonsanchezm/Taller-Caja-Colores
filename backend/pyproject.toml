@@ -25,6 +25,9 @@ include = ["app*"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+markers = [
+    "stress: pruebas repetitivas de estabilidad y rendimiento",
+]
 
 [tool.coverage.run]
 branch = true
